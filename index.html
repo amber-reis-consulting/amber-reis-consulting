@@ -399,7 +399,6 @@
 
                         <!-- Hidden fields for better email formatting -->
                         <input type="hidden" name="_subject" value="New Consulting Inquiry from Contact Form">
-                        <input type="hidden" name="_next" value="https://amber-reis-consulting.github.io/amber-reis-consulting/thank-you.html">
                         <input type="hidden" name="_format" value="plain">
 
                         <button type="submit" class="btn">
@@ -458,11 +457,10 @@
             button.innerHTML = '<span class="icon-send"></span>Sending...';
             button.disabled = true;
             
-            // Re-enable button after a delay in case of errors
+            // Redirect to thank you page after form submission
             setTimeout(() => {
-                button.innerHTML = originalText;
-                button.disabled = false;
-            }, 5000);
+                window.location.href = 'https://amber-reis-consulting.github.io/amber-reis-consulting/thank-you.html';
+            }, 2000); // 2 second delay to ensure form submits first
         });
 
         // Simple analytics tracking
