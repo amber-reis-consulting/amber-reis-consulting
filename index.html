@@ -450,17 +450,40 @@
     <script>
         // Form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Let the form submit naturally to Formspree
-            // Show a brief loading message
+            e.preventDefault(); // Prevent default form submission
+            
+            // Show loading state
             const button = this.querySelector('.btn');
             const originalText = button.innerHTML;
             button.innerHTML = '<span class="icon-send"></span>Sending...';
             button.disabled = true;
             
-            // Redirect to thank you page after form submission
-            setTimeout(() => {
-                window.location.href = 'https://amber-reis-consulting.github.io/amber-reis-consulting/thank-you.html';
-            }, 2000); // 2 second delay to ensure form submits first
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Submit to Formspree manually
+            fetch('https://formspree.io/f/mjkageaq', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - redirect to thank you page
+                    window.location.href = 'https://amber-reis-consulting.github.io/amber-reis-consulting/thank-you.html';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Error handling - show alert and restore button
+                alert('There was an issue sending your message. Please try again or contact me directly at (250) 415-3103.');
+                button.innerHTML = originalText;
+                button.disabled = false;
+                console.error('Form submission error:', error);
+            });
         });
 
         // Simple analytics tracking
