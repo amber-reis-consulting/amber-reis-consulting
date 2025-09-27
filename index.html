@@ -364,7 +364,7 @@
             <div class="section">
                 <h2>Get In Touch</h2>
                 <div class="contact-form">
-                    <form id="contactForm" action="#" method="POST">
+                    <form id="contactForm" action="https://formspree.io/f/mjkageaq" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
@@ -396,6 +396,11 @@
                             <label for="message">Tell me about your wellness challenges and goals</label>
                             <textarea id="message" name="message" rows="4" placeholder="Describe your current wellness initiatives, challenges you're facing, or specific areas where you'd like to improve resident outcomes..."></textarea>
                         </div>
+
+                        <!-- Hidden fields for better email formatting -->
+                        <input type="hidden" name="_subject" value="New Consulting Inquiry from Contact Form">
+                        <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo-name/thank-you.html">
+                        <input type="hidden" name="_format" value="plain">
 
                         <button type="submit" class="btn">
                             <span class="icon-send"></span>
@@ -446,37 +451,18 @@
     <script>
         // Form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Let the form submit naturally to Formspree
+            // Show a brief loading message
+            const button = this.querySelector('.btn');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<span class="icon-send"></span>Sending...';
+            button.disabled = true;
             
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const company = formData.get('company');
-            const phone = formData.get('phone');
-            const location = formData.get('location');
-            const message = formData.get('message');
-            
-            // Create mailto link with form data
-            const subject = encodeURIComponent('Consulting Request');
-            const body = encodeURIComponent(
-                `Hello Amber,\n\n` +
-                `I'm interested in learning more about your wellness consulting services.\n\n` +
-                `Contact Information:\n` +
-                `Name: ${name}\n` +
-                `Company: ${company}\n` +
-                `Email: ${email}\n` +
-                `Phone: ${phone}\n` +
-                `Location: ${location}\n\n` +
-                `Message:\n${message}\n\n` +
-                `Best regards,\n${name}`
-            );
-            
-            // Open default email client
-            window.location.href = `mailto:amber.reismillen@gmail.com?subject=${subject}&body=${body}`;
-            
-            // Show confirmation
-            alert('Thank you for your interest! Your default email client should open with your message pre-filled. If it doesn\'t open automatically, please email me directly at amber.reismillen@gmail.com');
+            // Re-enable button after a delay in case of errors
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 5000);
         });
 
         // Simple analytics tracking
