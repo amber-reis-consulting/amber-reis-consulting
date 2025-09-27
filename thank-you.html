@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amber Reis Consulting - Active Aging & Wellness Strategy</title>
+    <title>Thank You - Amber Reis Consulting</title>
     <style>
         * {
             margin: 0;
@@ -18,10 +18,13 @@
             background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FFEAA7 100%);
             min-height: 100vh;
             padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
@@ -72,237 +75,157 @@
             z-index: 1;
         }
 
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            animation: bounce 0.6s ease-out 0.3s both;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
         h1 {
-            font-size: 2.8em;
-            margin-bottom: 8px;
+            font-size: 2.5em;
+            margin-bottom: 15px;
             font-weight: 400;
             letter-spacing: 1px;
         }
 
-        .company-name {
-            font-size: 1.3em;
-            opacity: 0.95;
-            font-weight: 300;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        .tagline {
-            font-size: 1.1em;
+        .subtitle {
+            font-size: 1.2em;
             opacity: 0.9;
             font-weight: 300;
         }
 
         .content {
             padding: 40px 35px;
-        }
-
-        .intro-section {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 25px;
-            background: linear-gradient(135deg, #FFE4E6, #E0F7F7, #E3F2FD);
-            border-radius: 15px;
-            border-left: 5px solid #FF6B6B;
         }
 
-        .intro-headline {
-            color: #D63384;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .intro-detail {
-            color: #37474F;
-            font-size: 1.05em;
-            line-height: 1.7;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .section {
+        .message-section {
             margin-bottom: 35px;
         }
 
-        .section h2 {
+        .main-message {
+            font-size: 1.3em;
             color: #D63384;
             margin-bottom: 20px;
-            font-size: 1.5em;
-            border-left: 4px solid #FF6B6B;
-            padding-left: 15px;
-        }
-
-        .contact-form {
-            background: #FAFAFA;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #E0E0E0;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #2E7D32;
             font-weight: 500;
-            font-size: 0.95em;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #E0E0E0;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .direct-contact {
-            display: grid;
-            gap: 15px;
+        .detail-message {
+            color: #37474F;
+            font-size: 1.05em;
+            line-height: 1.7;
             margin-bottom: 25px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 18px;
-            background: linear-gradient(135deg, #FFF5F5, #F0FDFD);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #4ECDC4;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        .next-steps {
+            background: linear-gradient(135deg, #FFE4E6, #E0F7F7, #E3F2FD);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #FF6B6B;
         }
 
-        .contact-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.15);
-        }
-
-        .contact-item i {
+        .next-steps h2 {
+            color: #D63384;
+            margin-bottom: 20px;
             font-size: 1.4em;
-            margin-right: 15px;
-            color: #FF6B6B;
-            min-width: 30px;
+        }
+
+        .steps-list {
+            text-align: left;
+            color: #37474F;
+            line-height: 1.8;
+        }
+
+        .steps-list li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #FFF5F5, #F0FDFD);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            color: #D63384;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            margin: 10px 15px;
+            color: #37474F;
         }
 
         .contact-item a {
             color: #D63384;
             text-decoration: none;
             font-weight: 500;
+            margin-left: 8px;
         }
 
         .contact-item a:hover {
             color: #4ECDC4;
         }
 
-        .services-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-top: 25px;
-        }
-
-        .service-item {
-            background: linear-gradient(135deg, #ffffff, #FFF5F5, #F0FDFD);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-            border-top: 3px solid #4ECDC4;
-        }
-
-        .service-item:nth-child(2) {
-            border-top-color: #FF6B6B;
-        }
-
-        .service-item:nth-child(3) {
-            border-top-color: #45B7D1;
-        }
-
-        .service-item:nth-child(4) {
-            border-top-color: #96CEB4;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.15);
-        }
-
-        .service-item h4 {
-            color: #D63384;
-            margin-bottom: 12px;
-            font-size: 1.1em;
-        }
-
-        .service-item p {
-            color: #546E7A;
-            font-size: 0.95em;
-            line-height: 1.5;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 12px 25px;
             background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 500;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1.05em;
-            text-align: center;
-            width: 100%;
-            margin-top: 20px;
+            font-size: 1em;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
             background: linear-gradient(135deg, #FF5252, #26A69A);
         }
 
-        .linkedin-link {
-            text-align: center;
-            margin-top: 25px;
-            padding: 20px;
-            background: linear-gradient(135deg, #E3F2FD, #FFF5F5, #F0FDFD);
-            border-radius: 12px;
+        .btn-secondary {
+            background: linear-gradient(135deg, #45B7D1, #96CEB4);
         }
 
-        .linkedin-link a {
-            display: inline-flex;
-            align-items: center;
-            color: #D63384;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05em;
-            transition: color 0.3s ease;
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #2196F3, #4CAF50);
+            box-shadow: 0 8px 20px rgba(69, 183, 209, 0.3);
         }
 
-        .linkedin-link a:hover {
-            color: #4ECDC4;
+        .timeline {
+            font-size: 0.9em;
+            color: #546E7A;
+            font-style: italic;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -312,7 +235,7 @@
             }
             
             h1 {
-                font-size: 2.2em;
+                font-size: 2em;
             }
             
             .header {
@@ -323,165 +246,89 @@
                 padding: 30px 25px;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .services-preview {
-                grid-template-columns: 1fr;
+            .btn {
+                width: 200px;
+                text-align: center;
             }
         }
 
         /* Icon styles using Unicode symbols */
-        .icon-phone::before { content: "📞 "; }
-        .icon-email::before { content: "✉️ "; }
-        .icon-linkedin::before { content: "💼 "; }
-        .icon-location::before { content: "📍 "; }
-        .icon-send::before { content: "📨 "; }
+        .icon-phone::before { content: "📞"; }
+        .icon-linkedin::before { content: "💼"; }
+        .icon-back::before { content: "🏠"; }
+        .icon-calendar::before { content: "📅"; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="header-content">
-                <h1>Amber Reis</h1>
-                <div class="company-name">Amber Reis Consulting</div>
-                <p class="tagline">Active Aging & Wellness Strategy for Senior Living</p>
+                <div class="checkmark">✓</div>
+                <h1>Thank You!</h1>
+                <p class="subtitle">Your message has been sent successfully</p>
             </div>
         </div>
         
         <div class="content">
-            <div class="intro-section">
-                <div class="intro-headline">
-                    Transforming senior living through comprehensive wellness strategies that enhance resident well-being and strengthen your bottom line.
+            <div class="message-section">
+                <div class="main-message">
+                    I've received your wellness consulting inquiry and I'm excited to connect with you!
                 </div>
-                <div class="intro-detail">
-                    I specialize in creating sustainable wellness models for senior living operators and wellness leaders. My holistic approach integrates wellness strategies across HR, customer service, and food & beverage operations to build comprehensive programs that improve resident outcomes while driving operational excellence. From developing wellness frameworks to training staff and implementing sustainable practices, I help senior living communities create thriving environments where residents flourish and businesses prosper.
+                <div class="detail-message">
+                    Thank you for taking the time to share your wellness challenges and goals. Your information has been sent directly to my inbox, and I'll be reviewing it carefully to understand how I can best support your senior living community.
                 </div>
             </div>
 
-            <div class="section">
-                <h2>Get In Touch</h2>
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/mjkageaq" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="company">Company/Organization</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                        </div>
+            <div class="next-steps">
+                <h2>What Happens Next?</h2>
+                <ol class="steps-list">
+                    <li><strong>Within 24 hours:</strong> I'll send you a personal email acknowledging your inquiry and asking any clarifying questions</li>
+                    <li><strong>Within 2-3 business days:</strong> I'll provide you with a preliminary assessment of your needs and suggest potential solutions</li>
+                    <li><strong>Schedule a consultation:</strong> We'll set up a call to discuss your specific goals and how my wellness strategies can transform your community</li>
+                </ol>
+            </div>
 
-                        <div class="form-group">
-                            <label for="location">Location (City, State/Province)</label>
-                            <input type="text" id="location" name="location">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Tell me about your wellness challenges and goals</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Describe your current wellness initiatives, challenges you're facing, or specific areas where you'd like to improve resident outcomes..."></textarea>
-                        </div>
-
-                        <!-- Hidden fields for better email formatting -->
-                        <input type="hidden" name="_subject" value="New Consulting Inquiry from Contact Form">
-                        <input type="hidden" name="_next" value="https://yourgithubusername.github.io/your-repo-name/thank-you.html">
-                        <input type="hidden" name="_format" value="plain">
-
-                        <button type="submit" class="btn">
-                            <span class="icon-send"></span>
-                            Get In Touch
-                        </button>
-                    </form>
-                </div>
-
-                <div class="direct-contact">
+            <div class="contact-info">
+                <h3>Need to reach me sooner?</h3>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
                     <div class="contact-item">
                         <span class="icon-phone"></span>
-                        <a href="tel:+12504153103">+1 (250) 415-3103</a>
+                        <a href="tel:+12504153103">(250) 415-3103</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon-linkedin"></span>
+                        <a href="https://www.linkedin.com/in/amber-reis" target="_blank">LinkedIn</a>
                     </div>
                 </div>
-
-                <div class="linkedin-link">
-                    <a href="https://www.linkedin.com/in/amber-reis" target="_blank">
-                        <span class="icon-linkedin"></span>
-                        Connect with me on LinkedIn
-                    </a>
-                </div>
+                <p class="timeline">I typically respond to urgent matters within a few hours during business days.</p>
             </div>
 
-            <div class="section">
-                <h2>How I Help Senior Living Communities</h2>
-                <div class="services-preview">
-                    <div class="service-item">
-                        <h4>Wellness Strategy Development</h4>
-                        <p>Comprehensive wellness frameworks tailored to your community's unique needs and resident demographics</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Staff Training & Development</h4>
-                        <p>Holistic training programs across HR, customer service, and F&B teams to deliver consistent wellness experiences</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Operational Integration</h4>
-                        <p>Seamless integration of wellness initiatives into daily operations to improve outcomes and profitability</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Program Sustainability</h4>
-                        <p>Building long-term wellness models that evolve with your residents' needs while maintaining cost-effectiveness</p>
-                    </div>
-                </div>
+            <div class="btn-group">
+                <a href="javascript:history.back()" class="btn">
+                    <span class="icon-back"></span>
+                    Back to Contact Page
+                </a>
+                <a href="https://www.linkedin.com/in/amber-reis" target="_blank" class="btn btn-secondary">
+                    <span class="icon-linkedin"></span>
+                    Connect on LinkedIn
+                </a>
             </div>
         </div>
     </div>
 
     <script>
-        // Form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Let the form submit naturally to Formspree
-            // Show a brief loading message
-            const button = this.querySelector('.btn');
-            const originalText = button.innerHTML;
-            button.innerHTML = '<span class="icon-send"></span>Sending...';
-            button.disabled = true;
-            
-            // Re-enable button after a delay in case of errors
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.disabled = false;
-            }, 5000);
-        });
-
-        // Simple analytics tracking
-        function trackContact(type) {
-            console.log('Contact method used:', type);
-            // Add your analytics code here when ready
-        }
-
-        // Add click tracking to contact items
-        document.querySelectorAll('.contact-item a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const contactType = this.href.includes('mailto') ? 'email' : 'phone';
-                trackContact(contactType);
-            });
-        });
-
-        document.querySelector('.linkedin-link a').addEventListener('click', function(e) {
-            trackContact('linkedin');
-        });
+        // Simple analytics tracking for thank you page
+        console.log('Thank you page loaded - form submission successful');
+        
+        // Optional: Auto-redirect after a long delay (uncomment if desired)
+        // setTimeout(() => {
+        //     window.location.href = '/';
+        // }, 30000); // Redirect after 30 seconds
     </script>
 </body>
 </html>
